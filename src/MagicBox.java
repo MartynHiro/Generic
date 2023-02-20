@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class MagicBox<T> {
-    T[] items;
+    private T[] items;
 
     public MagicBox(int size) {
         this.items = (T[]) new Object[size];
@@ -30,7 +30,7 @@ public class MagicBox<T> {
         }
 
         if (amountEmptyCells != 0) {
-            throw new BoxIsNotFull(amountEmptyCells);
+            throw new BoxIsNotFullException(amountEmptyCells);
         }
         return items[randomInt];
     }
